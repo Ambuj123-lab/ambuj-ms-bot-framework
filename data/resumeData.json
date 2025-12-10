@@ -1,0 +1,293 @@
+{
+    "personalInfo": {
+        "name": "Ambuj Kumar Tripathi",
+        "title": "AI Prompt Engineer | LLM Integration Specialist | Model Validation Expert",
+        "email": "kumarambuj8@gmail.com",
+        "phone": "+91 9431 801363",
+        "location": "Gorakhpur, Uttar Pradesh, India",
+        "portfolio": "https://ambuj-portfolio-v2.netlify.app/",
+        "github": "https://github.com/Ambuj123-lab",
+        "availability": "Available Immediately • Remote/Hybrid • Open to Relocation"
+    },
+    "professionalSummary": "AI Prompt Engineer with production experience optimizing commercial-grade AI models at Hogarth Worldwide (WPP). Specialized in prompt engineering, LLM integration, adversarial testing, and AI workflow automation. Successfully transitioned from telecom infrastructure (British Telecom, Tata Communications) to AI through intensive self-learning and hands-on project execution. Reduced prompt iteration time by 40% through systematic optimization methodology at Hogarth. Built 8+ production-ready AI applications with 10,000+ user interactions. 5+ years technical experience in automation, data analysis, network optimization, and cross-functional team collaboration.",
+    "seeking": [
+        "AI Engineer",
+        "Prompt Engineer",
+        "LLM Integration Engineer",
+        "AI/ML Roles"
+    ],
+    "coreStrengths": [
+        "Prompt Engineering",
+        "LLM API Integration",
+        "Model Validation",
+        "Red Teaming",
+        "Python/JavaScript",
+        "Cloud Platforms",
+        "Production AI Workflows",
+        "Data Analysis",
+        "Automation",
+        "Quality Assurance"
+    ],
+    "skills": {
+        "aiPromptEngineering": [
+            "Prompt Engineering",
+            "Large Language Models (GPT-4, Claude, Gemini, Meta Llama 3.70B, IBM WatsonX)",
+            "LLM API Integration",
+            "Adversarial Testing",
+            "Red Teaming",
+            "Model Validation",
+            "Few-Shot Learning",
+            "Zero-Shot Prompting",
+            "Token Optimization",
+            "Responsible AI",
+            "AI Ethics"
+        ],
+        "programming": [
+            "Python",
+            "JavaScript (ES6+)",
+            "HTML5",
+            "CSS3",
+            "React 18",
+            "Flask",
+            "Node.js",
+            "Gradio",
+            "Streamlit",
+            "Tailwind CSS"
+        ],
+        "aiTools": [
+            "Hugging Face Transformers",
+            "OpenRouter API",
+            "Gemini API",
+            "Vertex AI",
+            "IBM WatsonX",
+            "Jupyter Notebooks",
+            "NotebookLM",
+            "REST APIs",
+            "Puppeteer",
+            "Git"
+        ],
+        "cloudPlatforms": [
+            "Google Cloud Platform (Vertex AI, Cloud Functions, Cloud Run, GKE)",
+            "IBM (WatsonX Services, Cloud Foundry)",
+            "Microsoft Azure AI",
+            "Netlify",
+            "Render.com",
+            "Hugging Face"
+        ],
+        "specialized": [
+            "Progressive Web Apps (PWA)",
+            "Service Workers",
+            "Data Processing (Papa Parse, SheetJS, Plotly.js)",
+            "Web Speech API",
+            "PDF.js"
+        ]
+    },
+    "experience": [
+        {
+            "title": "AI Prompt Engineer",
+            "company": "Hogarth Worldwide (WPP Marketing Communications India Pvt. Ltd. via TeamLease)",
+            "duration": "September 2025 – October 2025",
+            "location": "Remote, India",
+            "type": "6-Month Contract",
+            "highlights": [
+                "Engineered prompts for commercial-grade AI models (Flux, SDXL) within strict token limits (72-77 tokens)",
+                "Conducted systematic model validation and adversarial testing, identifying critical limitations",
+                "Built reusable prompt libraries reducing prompt engineering time by 40%",
+                "Created systematic prompt optimization framework improving output quality consistency"
+            ],
+            "technologies": [
+                "Flux",
+                "SDXL",
+                "Prompt Engineering",
+                "Adversarial Testing",
+                "Model Validation"
+            ]
+        },
+        {
+            "title": "Associate Engineer - Fibre & Network Delivery",
+            "company": "British Telecom Global Services Pvt. Ltd.",
+            "duration": "January 2022 – August 2024",
+            "location": "Gurugram, India",
+            "highlights": [
+                "Led FTTP network planning using GIS tools, reducing deployment time by 15%",
+                "Achieved 98% quality assurance compliance",
+                "Awarded Top Performer (January 2022)",
+                "Developed rule-based automation reducing manual effort by 70%",
+                "Mentored 5+ junior engineers"
+            ]
+        },
+        {
+            "title": "Operations & Maintenance Engineer",
+            "company": "Tata Communications Transformation Services Ltd.",
+            "duration": "November 2021 – January 2022",
+            "location": "Lucknow, India",
+            "highlights": [
+                "Reduced network downtime by 10% through data analysis",
+                "Managed billing systems with 100% accuracy",
+                "Achieved 98% SLA compliance"
+            ]
+        },
+        {
+            "title": "Optical Fiber Execution Engineer",
+            "company": "Annu Infra Construct India Pvt. Ltd.",
+            "duration": "December 2017 – June 2018",
+            "location": "Kolkata, India",
+            "highlights": [
+                "Executed fiber deployment for Ministry of Defense across 3 states",
+                "100% security compliance",
+                "Reduced project delays by 20%"
+            ]
+        },
+        {
+            "title": "System Administrator",
+            "company": "Tata Consultancy Services (TCS)",
+            "duration": "October 2013 – November 2014",
+            "location": "Noida, India",
+            "highlights": [
+                "Managed revenue systems for Delhi Jal Board with 99% uptime",
+                "Trained 20+ portal users",
+                "Supported eMigrate portal for Ministry of Overseas Affairs"
+            ]
+        }
+    ],
+    "projects": [
+        {
+            "name": "Geo AI - Geospatial Narrative & Image Analysis Tool",
+            "date": "November 2025",
+            "description": "AI-powered geospatial analysis tool using Gemini 1.5 Flash for location-based narratives",
+            "liveDemo": "https://geo-narrator-ai.onrender.com/",
+            "technologies": [
+                "Node.js",
+                "Express",
+                "Gemini API",
+                "Leaflet.js",
+                "HTML5",
+                "CSS3"
+            ]
+        },
+        {
+            "name": "LLM-Integrated Resume Chatbot",
+            "date": "August 2025",
+            "description": "Scalable chatbot using Llama 3.3.70B, reducing query resolution time by 25% for 100+ concurrent users",
+            "liveDemo": "https://ambuj-resume-bot.onrender.com",
+            "technologies": [
+                "Meta Llama 3.3.70B",
+                "OpenRouter API",
+                "Python",
+                "Flask",
+                "JavaScript"
+            ]
+        },
+        {
+            "name": "Professional Task Management System",
+            "date": "September 2025",
+            "description": "Privacy-first PWA with 100% client-side localStorage, service workers, offline functionality",
+            "technologies": [
+                "React 18",
+                "Tailwind CSS",
+                "PWA",
+                "Service Workers",
+                "Web Audio API"
+            ]
+        },
+        {
+            "name": "Resume Intelligence - AI-Powered Resume Analyzer",
+            "date": "August 2025",
+            "description": "Web-based resume analysis platform with PDF.js, multi-dimensional scoring system",
+            "technologies": [
+                "HTML5",
+                "CSS3",
+                "JavaScript ES6+",
+                "PDF.js",
+                "PWA"
+            ]
+        },
+        {
+            "name": "Smart AI Prompt Builder",
+            "date": "August 2025",
+            "description": "Intelligent web app helping non-technical users create effective AI prompts with 95% accuracy in category detection",
+            "technologies": [
+                "HTML5",
+                "CSS3",
+                "JavaScript ES6+",
+                "Client-Side Processing"
+            ]
+        },
+        {
+            "name": "Resume-as-Code Pipeline",
+            "date": "July 2025",
+            "description": "Automated pipeline generating ATS-friendly PDF resumes using Node.js and Puppeteer",
+            "technologies": [
+                "Node.js",
+                "Puppeteer",
+                "HTML5",
+                "CSS3"
+            ]
+        }
+    ],
+    "certifications": {
+        "nvidia": [
+            "Building RAG Agents with LLMs",
+            "Getting Started with AI on Jetson Nano"
+        ],
+        "googleCloud": [
+            "Prompt Design in Vertex AI Skill Badge",
+            "Build Real World AI Applications with Gemini and Imagen",
+            "Explore Generative AI with Vertex AI Gemini API",
+            "Build a Website on Google Cloud",
+            "Classify Images with TensorFlow on Google Cloud",
+            "Develop GenAI Apps with Gemini and Streamlit"
+        ],
+        "ibm": [
+            "Artificial Intelligence Fundamentals",
+            "Generative AI in Action",
+            "Deep Learning Essentials",
+            "Build Your Own Chatbot - Level 1",
+            "Python for Data Science"
+        ],
+        "microsoftAzure": [
+            "Get Started with Language Models in Azure Databricks",
+            "Review Responsible AI Principles for Language Models"
+        ],
+        "jobSimulations": [
+            "BCG X - Data Extraction, Financial Analysis, AI-powered Financial Chatbot",
+            "AWS Solutions Architecture Job Simulation",
+            "PwC - Digital Assurance & Transparency",
+            "Deloitte Australia - Data Analytics",
+            "Tata Group (Tata iQ) - GenAI Powered Data Analytics",
+            "Datacom - Partnering with AI in the Workplace",
+            "EAB - GenAI for Proposal Generation",
+            "Siemens - Forage Completion Program"
+        ],
+        "other": [
+            "LFS118: Ethical Principles for Conversational AI - The Linux Foundation",
+            "Anthropic Academy - Model Context Protocol (MCP) Course",
+            "Anthropic Academy - Claude with Google Vertex AI"
+        ]
+    },
+    "education": [
+        {
+            "degree": "Post Graduate Diploma in Power Transmission & Distribution",
+            "institution": "National Power Training Institute, Ministry of Power",
+            "year": "2015 – 2016",
+            "location": "New Delhi, India"
+        },
+        {
+            "degree": "Bachelor of Technology - Electrical & Electronics Engineering",
+            "institution": "Uttar Pradesh Technical University",
+            "year": "2009 – 2013",
+            "location": "Lucknow, India"
+        }
+    ],
+    "achievements": [
+        "Produced 50+ AI-generated YouTube Shorts with 10,000+ views",
+        "Beta-tested 3+ AI tools providing actionable feedback",
+        "Qualified for BITSOM x Masai Product Management with Generative AI Program (2025)",
+        "18+ verified certifications from Google Cloud, IBM, AWS, Microsoft Azure"
+    ],
+    "botBranding": {
+        "botName": "Ambuj's AI Assistant",
+        "welcomeMessage": "Hi! I'm Ambuj's AI Assistant 🤖 I can answer questions about Ambuj's professional background, skills, projects, and experience. How can I help you today?",
+        "creatorCredit": "Built by Ambuj Kumar Tripathi using MS Bot Framework & Gemini AI"
+    }
+}

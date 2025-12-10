@@ -1,0 +1,26 @@
+{
+  "name": "ms-bot-framework-resume-bot",
+  "version": "1.0.0",
+  "description": "Resume chatbot built with MS Bot Framework SDK and Gemini API - by Ambuj Kumar Tripathi",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node index.js"
+  },
+  "keywords": [
+    "bot-framework",
+    "gemini",
+    "resume-bot",
+    "chatbot",
+    "ai"
+  ],
+  "author": "Ambuj Kumar Tripathi",
+  "license": "MIT",
+  "dependencies": {
+    "@google/generative-ai": "^0.21.0",
+    "botbuilder": "^4.23.1",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "restify": "^11.1.0"
+  }
+}
