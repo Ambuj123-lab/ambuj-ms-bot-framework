@@ -3,9 +3,20 @@ const path = require('path');
 
 class GeminiService {
     constructor() {
-        this.apiKey = process.env.GEMINI_API_KEY;
-        this.baseUrl = 'https://generativelanguage.googleapis.com/v1beta/models';
-        this.modelName = 'gemini-flash-latest'; // Matching user's working project
+        // Check if OpenRouter is available (preferred for India/restricted regions)
+        this.useOpenRouter = !!process.env.OPENROUTER_API_KEY;
+
+        if (this.useOpenRouter) {
+            this.apiKey = process.env.OPENROUTER_API_KEY;
+            this.baseUrl = 'https://openrouter.ai/api/v1/chat/completions';
+            this.modelName = 'amazon/nova-2-lite-v1:free'; // Amazon Nova - stable, less traffic, 1M context
+            console.log('✅ Using OpenRouter API (Amazon Nova 2 Lite FREE)');
+        } else {
+            this.apiKey = process.env.GEMINI_API_KEY;
+            this.baseUrl = 'https://generativelanguage.googleapis.com/v1beta/models';
+            this.modelName = 'gemini-2.0-flash';
+            console.log('⚠️ Using Direct Gemini API');
+        }
 
         this.resumeData = this.loadResumeData();
         this.systemPrompt = this.buildSystemPrompt();
@@ -15,7 +26,7 @@ class GeminiService {
             temperature: 0.7,
             topP: 0.95,
             topK: 40,
-            maxOutputTokens: 1000,
+            maxOutputTokens: 3000, // Increased to prevent truncation
         };
 
         this.offensiveWords = [
@@ -77,8 +88,20 @@ RESPONSE GUIDELINES:
 - For questions about ${data.personalInfo.name}: Use the detailed resume data provided below
 - For ANY general question (science, coding, history, etc.): Provide accurate, helpful information
 - For analysis tasks: Be thorough and clear
-- Keep responses concise but informative (typically 2-3 paragraphs, longer if needed for complex topics)
-- Use emojis occasionally to be friendly 🤖
+- ALWAYS complete your response fully - never truncate mid-sentence
+- Keep responses well-structured but complete
+
+MARKDOWN FORMATTING (IMPORTANT):
+- Use **bold** for key terms, company names, job titles, and important highlights
+- Use bullet points (•) for lists
+- Use ### for section headers when organizing information
+- Use proper line breaks between sections for readability
+- Keep responses organized and scannable
+- Example format:
+  ### Experience
+  **Company Name** - Role
+  • Key achievement 1
+  • Key achievement 2
 
 WHEN YOU DON'T KNOW SOMETHING ABOUT AMBUJ:
 - If asked something specific about Ambuj that's not in the resume data, respond gracefully
@@ -186,50 +209,89 @@ IMPORTANT:
             const harmfulCheck = this.checkForHarmfulContent(message);
             if (harmfulCheck.isHarmful) return { message: harmfulCheck.response, guardrailTriggered: true };
 
-            // 2. Format History for REST API
-            const contents = history.map(msg => ({
-                role: msg.role === 'user' ? 'user' : 'model',
-                parts: [{ text: msg.content }]
-            }));
-
-            // Add current message
-            contents.push({
-                role: 'user',
-                parts: [{ text: message }]
-            });
-
-            // 3. Prepare System Prompt
+            // 2. Prepare System Prompt
             let currentSystemPrompt = this.systemPrompt;
             if (forceHindi) {
                 currentSystemPrompt += `\n\nIMPORTANT OVERRIDE: The user has enabled "Hindi Mode". You MUST reply in PURE HINDI (Devanagari script) regardless of the input language. Translate if necessary.`;
             }
 
-            // 4. Prepare Request
-            const url = `${this.baseUrl}/${this.modelName}:generateContent?key=${this.apiKey}`;
-            const payload = {
-                contents: contents,
-                systemInstruction: {
-                    parts: [{ text: currentSystemPrompt }]
-                },
-                generationConfig: this.config
-            };
+            let response, data, text;
 
-            // 5. Call API
-            const response = await fetch(url, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(payload)
-            });
+            if (this.useOpenRouter) {
+                // OpenRouter API (OpenAI-compatible format)
+                const messages = [
+                    { role: 'system', content: currentSystemPrompt },
+                    ...history.map(msg => ({
+                        role: msg.role === 'user' ? 'user' : 'assistant',
+                        content: msg.content
+                    })),
+                    { role: 'user', content: message }
+                ];
 
-            const data = await response.json();
+                // Single model call - Amazon Nova 2 Lite
+                response = await fetch(this.baseUrl, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${this.apiKey}`,
+                        'HTTP-Referer': 'https://ambuj-resume-bot.onrender.com',
+                        'X-Title': 'Ambuj Resume Bot'
+                    },
+                    body: JSON.stringify({
+                        model: this.modelName,
+                        messages: messages,
+                        temperature: this.config.temperature,
+                        max_tokens: this.config.maxOutputTokens
+                    })
+                });
 
-            if (!response.ok) {
-                console.error('Gemini API Error:', JSON.stringify(data, null, 2));
-                throw new Error(data.error?.message || 'Unknown API Error');
+                data = await response.json();
+
+                if (!response.ok) {
+                    console.error('OpenRouter API Error:', JSON.stringify(data, null, 2));
+                    throw new Error(data.error?.message || 'Unknown API Error');
+                }
+
+                console.log(`📡 OpenRouter Response - Model: ${data.model || this.modelName}`);
+                text = data.choices?.[0]?.message?.content;
+
+            } else {
+                // Direct Gemini API
+                const contents = history.map(msg => ({
+                    role: msg.role === 'user' ? 'user' : 'model',
+                    parts: [{ text: msg.content }]
+                }));
+
+                contents.push({
+                    role: 'user',
+                    parts: [{ text: message }]
+                });
+
+                const url = `${this.baseUrl}/${this.modelName}:generateContent?key=${this.apiKey}`;
+                const payload = {
+                    contents: contents,
+                    systemInstruction: {
+                        parts: [{ text: currentSystemPrompt }]
+                    },
+                    generationConfig: this.config
+                };
+
+                response = await fetch(url, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                data = await response.json();
+
+                if (!response.ok) {
+                    console.error('Gemini API Error:', JSON.stringify(data, null, 2));
+                    throw new Error(data.error?.message || 'Unknown API Error');
+                }
+
+                text = data.candidates?.[0]?.content?.parts?.[0]?.text;
             }
 
-            // 6. Extract Response
-            const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
             if (!text) throw new Error('No response text generated');
 
             return {
@@ -238,7 +300,7 @@ IMPORTANT:
             };
 
         } catch (error) {
-            console.error('Gemini Chat Error:', error.message);
+            console.error('Chat Error:', error.message);
             return {
                 message: "😅 I'm a bit busy right now. Please try again in a moment! (Error: " + error.message + ")",
                 guardrailTriggered: false

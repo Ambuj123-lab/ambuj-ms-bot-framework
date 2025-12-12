@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -43,195 +43,6 @@
             height: 100%;
         }
 
-        /* Sidebar */
-        .sidebar {
-            width: 280px;
-            background: var(--bg-card);
-            border-right: 1px solid var(--border-color);
-            display: flex;
-            flex-direction: column;
-            transition: transform 0.3s ease;
-            z-index: 100;
-        }
-
-        .sidebar-header {
-            padding: 20px;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .new-chat-btn {
-            width: 100%;
-            padding: 12px;
-            background: var(--bg-glass);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            color: var(--text-primary);
-            cursor: pointer;
-            transition: all 0.2s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            font-weight: 600;
-        }
-
-        .new-chat-btn:hover {
-            background: var(--bg-glass);
-            border-color: var(--primary);
-        }
-
-        .sidebar-section {
-            padding: 15px 20px 5px;
-            font-size: 12px;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .sessions {
-            flex: 1;
-            overflow-y: auto;
-            padding: 10px;
-        }
-
-        .session-item {
-            padding: 12px 15px;
-            margin-bottom: 5px;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: background 0.2s;
-            position: relative;
-            group: session;
-        }
-
-        .session-item:hover {
-            background: var(--bg-glass);
-        }
-
-        .session-item.active {
-            background: rgba(242, 80, 34, 0.1);
-            border: 1px solid rgba(242, 80, 34, 0.3);
-        }
-
-        .session-title {
-            font-size: 14px;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            margin-bottom: 4px;
-        }
-
-        .session-date {
-            font-size: 11px;
-            color: var(--text-muted);
-        }
-
-        .session-actions {
-            position: absolute;
-            right: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-            display: none;
-            gap: 5px;
-        }
-
-        .session-item:hover .session-actions {
-            display: flex;
-        }
-
-        .action-btn {
-            background: none;
-            border: none;
-            color: var(--text-secondary);
-            cursor: pointer;
-            padding: 4px;
-            border-radius: 4px;
-        }
-
-        .action-btn:hover {
-            background: var(--bg-glass);
-            color: var(--text-primary);
-        }
-
-        .delete-btn:hover {
-            color: var(--danger);
-        }
-
-        .sidebar-footer {
-            padding: 15px;
-            border-top: 1px solid var(--border-color);
-        }
-
-        /* Branding Card */
-        .branding-card {
-            background: var(--bg-glass);
-            border-radius: 12px;
-            padding: 15px;
-            border: 1px solid var(--border-color);
-        }
-
-        .branding-header {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 10px;
-        }
-
-        .branding-logo {
-            width: 32px;
-            height: 32px;
-            background: linear-gradient(135deg, #f25022, #d63e12);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .branding-name {
-            font-weight: 700;
-            font-size: 14px;
-            color: var(--primary);
-        }
-
-        .branding-subtitle {
-            font-size: 10px;
-            color: var(--text-muted);
-        }
-
-        .branding-info {
-            font-size: 11px;
-            color: var(--text-secondary);
-            margin-bottom: 8px;
-        }
-
-        .branding-info a {
-            color: var(--primary);
-            text-decoration: none;
-        }
-
-        .tech-badges {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 4px;
-            margin-bottom: 8px;
-        }
-
-        .tech-badge {
-            font-size: 9px;
-            padding: 2px 6px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 4px;
-            color: var(--text-secondary);
-        }
-
-        .lang-info {
-            font-size: 10px;
-            color: var(--text-muted);
-            display: flex;
-            align-items: center;
-            gap: 4px;
-        }
-
         /* Main App */
         .app {
             flex: 1;
@@ -257,37 +68,16 @@
             gap: 15px;
         }
 
-        .language-hint {
-            font-size: 11px;
-            color: var(--text-muted);
-            display: none;
-        }
-
-        @media (min-width: 600px) {
-            .language-hint {
-                display: block;
-            }
-        }
-
-        .logo {
-            width: 40px;
-            height: 40px;
+        .logo-img {
+            width: 45px;
+            height: 45px;
             border-radius: 10px;
-            background: transparent;
+            object-fit: cover;
             border: 2px solid var(--primary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .logo-text {
-            font-weight: 800;
-            font-size: 20px;
-            color: var(--primary);
         }
 
         .header-info h1 {
-            font-size: 16px;
+            font-size: 18px;
             font-weight: 700;
         }
 
@@ -365,29 +155,35 @@
         }
 
         .avatar {
-            width: 36px;
-            height: 36px;
-            border-radius: 8px;
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
             background: var(--bg-card);
             border: 1px solid var(--border-color);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 18px;
+            font-size: 20px;
             flex-shrink: 0;
+            overflow: hidden;
+        }
+
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .message.bot .avatar {
             border-color: var(--primary);
-            color: var(--primary);
         }
 
         .content {
             background: var(--bg-card);
-            padding: 15px;
+            padding: 15px 18px;
             border-radius: 12px;
             border: 1px solid var(--border-color);
-            line-height: 1.6;
+            line-height: 1.7;
             font-size: 15px;
             position: relative;
         }
@@ -403,66 +199,62 @@
             border-top-left-radius: 2px;
         }
 
-        /* Markdown Styles */
+        /* Professional Markdown Styles */
         .content p {
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
 
         .content p:last-child {
             margin-bottom: 0;
         }
 
-        /* Bold text - Colorful & Distinct */
         .content strong {
-            color: var(--accent);
-            font-weight: 700;
+            color: #56b6c2;
+            font-weight: 600;
         }
 
-        /* Headers */
         .content h1,
         .content h2,
         .content h3 {
-            margin-top: 15px;
-            margin-bottom: 8px;
-            color: var(--primary);
+            margin-top: 16px;
+            margin-bottom: 10px;
+            color: #e06c75;
             font-weight: 600;
         }
 
         .content h1 {
-            font-size: 1.4em;
+            font-size: 1.3em;
             border-bottom: 1px solid var(--border-color);
-            padding-bottom: 5px;
+            padding-bottom: 6px;
         }
 
         .content h2 {
-            font-size: 1.2em;
+            font-size: 1.15em;
+            color: #c678dd;
         }
 
         .content h3 {
-            font-size: 1.1em;
+            font-size: 1.05em;
+            color: #61afef;
         }
 
-        /* Lists */
         .content ul,
         .content ol {
             margin-left: 20px;
-            margin-bottom: 10px;
-            color: var(--text-primary);
+            margin-bottom: 12px;
         }
 
         .content li {
-            margin-bottom: 4px;
+            margin-bottom: 6px;
         }
 
-        /* Code Blocks */
         .content code {
             background: rgba(255, 255, 255, 0.1);
-            padding: 2px 5px;
+            padding: 2px 6px;
             border-radius: 4px;
-            font-family: 'Consolas', 'Monaco', monospace;
+            font-family: 'Consolas', monospace;
             font-size: 0.9em;
-            color: #ffb900;
-            /* Yellow for inline code */
+            color: #e5c07b;
         }
 
         .content pre {
@@ -470,33 +262,27 @@
             padding: 15px;
             border-radius: 8px;
             overflow-x: auto;
-            margin: 10px 0;
+            margin: 12px 0;
             border: 1px solid var(--border-color);
         }
 
         .content pre code {
             background: transparent;
             padding: 0;
-            color: #d4d4d4;
-            /* Standard light grey for block code */
-            font-size: 0.9em;
+            color: #abb2bf;
         }
 
         .content a {
-            color: var(--accent);
+            color: #61afef;
             text-decoration: none;
-            border-bottom: 1px dotted var(--accent);
-        }
-
-        .content a:hover {
-            border-bottom-style: solid;
+            border-bottom: 1px dotted #61afef;
         }
 
         .content blockquote {
             border-left: 3px solid var(--primary);
-            margin: 10px 0;
+            margin: 12px 0;
             padding-left: 15px;
-            color: var(--text-muted);
+            color: var(--text-secondary);
             font-style: italic;
         }
 
@@ -512,8 +298,8 @@
         .chip {
             background: var(--bg-card);
             border: 1px solid var(--border-color);
-            padding: 8px 16px;
-            border-radius: 20px;
+            padding: 10px 18px;
+            border-radius: 25px;
             font-size: 13px;
             cursor: pointer;
             transition: all 0.2s;
@@ -558,7 +344,7 @@
             border: none;
             color: var(--text-primary);
             font-size: 15px;
-            padding: 8px;
+            padding: 10px;
             outline: none;
         }
 
@@ -568,11 +354,11 @@
             border-radius: 8px;
             color: var(--text-secondary);
             transition: color 0.2s;
+            font-size: 18px;
         }
 
         .upload-label:hover {
             color: var(--primary);
-            background: var(--bg-glass);
         }
 
         input[type="file"] {
@@ -583,13 +369,14 @@
             background: var(--primary);
             color: white;
             border: none;
-            width: 36px;
-            height: 36px;
-            border-radius: 8px;
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
+            font-size: 18px;
             transition: background 0.2s;
         }
 
@@ -651,8 +438,8 @@
         /* Footer */
         .footer {
             text-align: center;
-            padding: 10px;
-            font-size: 11px;
+            padding: 12px;
+            font-size: 12px;
             color: var(--text-muted);
             background: var(--bg-dark);
         }
@@ -670,7 +457,7 @@
             display: flex;
             justify-content: center;
             gap: 15px;
-            margin-top: 5px;
+            margin-top: 6px;
         }
 
         .badge {
@@ -678,25 +465,8 @@
             align-items: center;
             gap: 5px;
             background: rgba(255, 255, 255, 0.05);
-            padding: 2px 8px;
-            border-radius: 10px;
-        }
-
-        .gemini-icon {
-            width: 14px;
-            height: 14px;
-        }
-
-        .ms-logo {
-            display: flex;
-            gap: 1px;
-            flex-wrap: wrap;
-            width: 12px;
-        }
-
-        .ms-logo div {
-            width: 5px;
-            height: 5px;
+            padding: 3px 10px;
+            border-radius: 12px;
         }
 
         /* Typing Indicator */
@@ -707,8 +477,8 @@
         }
 
         .typing-indicator span {
-            width: 6px;
-            height: 6px;
+            width: 8px;
+            height: 8px;
             background: var(--text-muted);
             border-radius: 50%;
             animation: bounce 1.4s infinite ease-in-out;
@@ -739,8 +509,8 @@
         .switch {
             position: relative;
             display: inline-block;
-            width: 40px;
-            height: 20px;
+            width: 44px;
+            height: 22px;
         }
 
         .switch input {
@@ -758,14 +528,14 @@
             bottom: 0;
             background-color: var(--border-color);
             transition: .4s;
-            border-radius: 20px;
+            border-radius: 22px;
         }
 
         .slider-round:before {
             position: absolute;
             content: "";
-            height: 16px;
-            width: 16px;
+            height: 18px;
+            width: 18px;
             left: 2px;
             bottom: 2px;
             background-color: white;
@@ -778,7 +548,148 @@
         }
 
         input:checked+.slider-round:before {
-            transform: translateX(20px);
+            transform: translateX(22px);
+        }
+
+        /* Floating Branding Box */
+        .floating-branding {
+            position: fixed;
+            bottom: 25px;
+            left: 25px;
+            background: linear-gradient(135deg, rgba(242, 80, 34, 0.15), rgba(26, 26, 26, 0.95));
+            border: 1px solid rgba(242, 80, 34, 0.4);
+            border-radius: 16px;
+            padding: 18px 22px;
+            z-index: 1000;
+            backdrop-filter: blur(15px);
+            width: 280px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .floating-branding .branding-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .floating-branding .branding-logo {
+            width: 45px;
+            height: 45px;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 2px solid var(--primary);
+        }
+
+        .floating-branding .branding-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .floating-branding .branding-name {
+            font-weight: 700;
+            font-size: 16px;
+            color: var(--primary);
+        }
+
+        .floating-branding .branding-subtitle {
+            font-size: 11px;
+            color: var(--text-muted);
+        }
+
+        .floating-branding .branding-info {
+            font-size: 12px;
+            color: var(--text-secondary);
+            margin-bottom: 10px;
+        }
+
+        .floating-branding .branding-info a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .floating-branding .tech-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 10px;
+        }
+
+        .floating-branding .tech-badge {
+            font-size: 10px;
+            padding: 4px 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 6px;
+            color: var(--text-secondary);
+        }
+
+        .floating-branding .lang-info {
+            font-size: 11px;
+            color: var(--text-muted);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .floating-branding {
+                display: none;
+            }
+
+            .header {
+                padding: 12px 15px;
+            }
+
+            .logo-img {
+                width: 38px;
+                height: 38px;
+            }
+
+            .header-info h1 {
+                font-size: 16px;
+            }
+
+            .messages {
+                padding: 15px;
+                gap: 15px;
+            }
+
+            .message {
+                gap: 10px;
+            }
+
+            .avatar {
+                width: 35px;
+                height: 35px;
+                font-size: 16px;
+            }
+
+            .content {
+                padding: 12px 14px;
+                font-size: 14px;
+            }
+
+            .quick-actions {
+                padding: 0 15px 10px;
+                gap: 8px;
+            }
+
+            .chip {
+                padding: 8px 14px;
+                font-size: 12px;
+            }
+
+            .input-area {
+                padding: 15px;
+            }
+
+            .text-input {
+                font-size: 14px;
+            }
+
+            .footer {
+                padding: 10px;
+                font-size: 11px;
+            }
         }
 
         /* Modals */
@@ -802,25 +713,11 @@
 
         .modal {
             background: var(--bg-card);
-            width: 90%;
-            max-width: 400px;
             border-radius: 16px;
             padding: 25px;
+            width: 90%;
+            max-width: 400px;
             border: 1px solid var(--border-color);
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
-            animation: slideUp 0.3s ease;
-        }
-
-        @keyframes slideUp {
-            from {
-                transform: translateY(20px);
-                opacity: 0;
-            }
-
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
         }
 
         .modal-header {
@@ -848,57 +745,50 @@
         }
 
         .setting-label {
-            font-size: 14px;
-            color: var(--text-secondary);
-            margin-bottom: 10px;
             display: flex;
             justify-content: space-between;
+            margin-bottom: 8px;
+            font-size: 14px;
         }
 
         .setting-value {
             color: var(--primary);
-            font-weight: 600;
         }
 
         .slider {
             width: 100%;
             height: 6px;
-            background: var(--border-color);
             border-radius: 3px;
-            appearance: none;
-            cursor: pointer;
+            background: var(--border-color);
+            outline: none;
+            -webkit-appearance: none;
         }
 
         .slider::-webkit-slider-thumb {
-            appearance: none;
+            -webkit-appearance: none;
             width: 18px;
             height: 18px;
-            background: var(--primary);
             border-radius: 50%;
+            background: var(--primary);
             cursor: pointer;
         }
 
         .setting-note {
             font-size: 11px;
             color: var(--text-muted);
-            margin-top: 6px;
+            margin-top: 5px;
         }
 
-        /* CAPTCHA Modal */
         .captcha-box {
-            background: var(--bg-glass);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 20px;
             text-align: center;
-            margin-bottom: 16px;
+            padding: 20px 0;
         }
 
         .captcha-question {
-            font-size: 24px;
+            font-size: 28px;
             font-weight: 700;
-            color: var(--accent);
-            margin-bottom: 12px;
+            margin-bottom: 15px;
+            color: var(--primary);
         }
 
         .captcha-input {
@@ -906,7 +796,7 @@
             padding: 12px;
             background: var(--bg-dark);
             border: 1px solid var(--border-color);
-            border-radius: 10px;
+            border-radius: 8px;
             color: var(--text-primary);
             font-size: 18px;
             text-align: center;
@@ -919,8 +809,8 @@
 
         .captcha-error {
             color: var(--danger);
-            font-size: 12px;
-            margin-top: 8px;
+            font-size: 13px;
+            margin-top: 10px;
             display: none;
         }
 
@@ -929,39 +819,31 @@
             padding: 14px;
             background: var(--primary);
             border: none;
-            border-radius: 12px;
-            color: #fff;
+            border-radius: 8px;
+            color: white;
+            font-size: 16px;
             font-weight: 600;
-            font-size: 14px;
             cursor: pointer;
-            margin-top: 12px;
-        }
-
-        .captcha-btn:hover {
-            background: var(--primary-dark);
+            margin-top: 15px;
         }
 
         .captcha-note {
             font-size: 11px;
             color: var(--text-muted);
-            margin-top: 12px;
+            margin-top: 15px;
+            text-align: center;
         }
 
-        /* Rename Modal */
         .rename-input {
             width: 100%;
             padding: 12px;
             background: var(--bg-dark);
             border: 1px solid var(--border-color);
-            border-radius: 10px;
+            border-radius: 8px;
             color: var(--text-primary);
             font-size: 14px;
             outline: none;
-            margin-bottom: 16px;
-        }
-
-        .rename-input:focus {
-            border-color: var(--primary);
+            margin-bottom: 15px;
         }
 
         .rename-btn {
@@ -969,100 +851,47 @@
             padding: 12px;
             background: var(--primary);
             border: none;
-            border-radius: 10px;
-            color: #fff;
+            border-radius: 8px;
+            color: white;
             font-weight: 600;
             cursor: pointer;
-        }
-
-        /* Mobile Responsiveness */
-        .menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            color: var(--text-primary);
-            font-size: 24px;
-            cursor: pointer;
-            margin-right: 10px;
-        }
-
-        @media (max-width: 768px) {
-            .sidebar {
-                position: absolute;
-                left: 0;
-                top: 0;
-                bottom: 0;
-                transform: translateX(-100%);
-                box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
-            }
-
-            .sidebar.active {
-                transform: translateX(0);
-            }
-
-            .menu-btn {
-                display: block;
-            }
-
-            .header {
-                padding: 10px 15px;
-            }
-
-            .quick-actions {
-                padding-bottom: 10px;
-                overflow-x: auto;
-                justify-content: flex-start;
-            }
-
-            .chip {
-                white-space: nowrap;
-            }
         }
     </style>
 </head>
 
 <body>
-    <div class="container">
-        <div class="sidebar">
-            <div class="sidebar-header">
-                <button class="new-chat-btn" onclick="createNewSession()">✨ New Chat</button>
-            </div>
-            <div class="sidebar-section">Chat History</div>
-            <div class="sessions" id="sessionsList"></div>
-            <div class="sidebar-footer">
-                <div class="branding-card">
-                    <div class="branding-header">
-                        <div class="branding-logo"><span class="logo-text">A</span></div>
-                        <div>
-                            <div class="branding-name">Ambuj's AI Bot</div>
-                            <div class="branding-subtitle">v1.0 • Guardrails Active</div>
-                        </div>
-                    </div>
-                    <div class="branding-info">Built by <a href="https://ambuj-portfolio-v2.netlify.app/"
-                            target="_blank">Ambuj Kumar Tripathi</a></div>
-                    <div class="tech-badges">
-                        <span class="tech-badge">MS Bot Framework</span>
-                        <span class="tech-badge">Gemini 1.5 Flash</span>
-                        <span class="tech-badge">Node.js</span>
-                    </div>
-                    <div class="lang-info">🌐 Hindi • English • Hinglish</div>
-                </div>
+    <!-- Floating Branding Box -->
+    <div class="floating-branding">
+        <div class="branding-header">
+            <div class="branding-logo"><img src="logo.jpg" alt="Ambuj"></div>
+            <div>
+                <div class="branding-name">Ambuj's AI Bot</div>
+                <div class="branding-subtitle">v1.0 Guardrails Active</div>
             </div>
         </div>
+        <div class="branding-info">Built by <a href="https://ambuj-portfolio-v2.netlify.app/" target="_blank">Ambuj
+                Kumar Tripathi</a></div>
+        <div class="tech-badges">
+            <span class="tech-badge">MS Bot Framework</span>
+            <span class="tech-badge">Amazon Nova</span>
+            <span class="tech-badge">Node.js</span>
+        </div>
+        <div class="lang-info"> Hindi English Hinglish</div>
+    </div>
 
+    <div class="container">
         <div class="app">
             <div class="header">
                 <div class="header-left">
-                    <button class="menu-btn" onclick="toggleSidebar()">☰</button>
-                    <div class="logo"><span class="logo-text">A</span></div>
+                    <img src="logo.jpg" alt="Ambuj" class="logo-img">
                     <div class="header-info">
                         <h1>Ambuj's AI</h1>
-                        <p><span class="status-dot"></span> Online • Guardrails Active</p>
+                        <p><span class="status-dot"></span> Online Guardrails Active</p>
                     </div>
                 </div>
                 <div class="header-actions" style="display: flex; align-items: center; gap: 8px;">
-                    <span class="language-hint">Change Language</span>
-                    <button class="icon-btn" onclick="openSettings()" title="Settings & Language">⚙️</button>
+                    <span style="font-size:11px;color:var(--text-muted);">Settings</span>
+                    <button class="icon-btn" onclick="openSettings()" title="Settings">&#9881;</button>
                 </div>
             </div>
 
@@ -1099,22 +928,18 @@
             <div class="footer">
                 Built by <a href="https://ambuj-portfolio-v2.netlify.app/" target="_blank">Ambuj Kumar Tripathi</a>
                 <div class="footer-badges">
-                    <span class="badge">
-                        <svg class="gemini-icon" viewBox="0 0 24 24" fill="none">
-                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="#4285f4"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-                        Gemini API
-                    </span>
-                    <span class="badge">
-                        <div class="ms-logo">
-                            <div style="background:#f25022"></div>
-                            <div style="background:#7fba00"></div>
-                            <div style="background:#00a4ef"></div>
-                            <div style="background:#ffb900"></div>
-                        </div>
-                        Microsoft Bot Framework
-                    </span>
+                    <span class="badge"><svg width="16" height="16" viewBox="0 0 24 24" fill="#FF9900">
+                            <path
+                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" />
+                            <path
+                                d="M12 6c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm0 10c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z" />
+                        </svg> Amazon Nova</span>
+                    <span class="badge"><svg width="16" height="16" viewBox="0 0 24 24">
+                            <rect x="1" y="1" width="10" height="10" fill="#F25022" />
+                            <rect x="13" y="1" width="10" height="10" fill="#7FBA00" />
+                            <rect x="1" y="13" width="10" height="10" fill="#00A4EF" />
+                            <rect x="13" y="13" width="10" height="10" fill="#FFB900" />
+                        </svg> MS Bot Framework</span>
                 </div>
             </div>
         </div>
@@ -1124,7 +949,7 @@
     <div class="modal-overlay" id="settingsModal">
         <div class="modal">
             <div class="modal-header">
-                <span class="modal-title">⚙️ Settings</span>
+                <span class="modal-title"> Settings</span>
                 <button class="modal-close" onclick="closeSettings()">✕</button>
             </div>
             <div class="setting-group">
@@ -1136,15 +961,14 @@
             </div>
             <div class="setting-group">
                 <div class="setting-label"><span>Max Tokens</span><span class="setting-value"
-                        id="tokenValue">1000</span></div>
-                <input type="range" class="slider" id="tokenSlider" min="100" max="2000" step="100" value="1000"
+                        id="tokenValue">2000</span></div>
+                <input type="range" class="slider" id="tokenSlider" min="500" max="4000" step="500" value="2000"
                     oninput="updateMaxTokens()">
-                <div class="setting-note">Response length (Backend: 1000)</div>
+                <div class="setting-note">Response length (Backend: 2000)</div>
             </div>
-
             <div class="setting-group" style="display: flex; justify-content: space-between; align-items: center;">
                 <div>
-                    <div class="setting-label" style="margin-bottom: 0;">🇮🇳 Hindi Mode</div>
+                    <div class="setting-label" style="margin-bottom: 0;"> Hindi Mode</div>
                     <div class="setting-note" style="margin-top: 2px;">Force bot to reply in Hindi</div>
                 </div>
                 <label class="switch">
@@ -1152,11 +976,10 @@
                     <span class="slider-round"></span>
                 </label>
             </div>
-
             <div class="setting-note"
                 style="margin-top: 16px; padding: 14px; background: var(--bg-glass); border-radius: 10px; text-align: center;">
-                🛡️ Guardrails: Offensive content blocked<br>
-                🌐 Languages: Auto-detect (unless Hindi Mode is ON)
+                Guardrails: Offensive content blocked<br>
+                Languages: Auto-detect (unless Hindi Mode is ON)
             </div>
         </div>
     </div>
@@ -1165,28 +988,16 @@
     <div class="modal-overlay" id="captchaModal">
         <div class="modal">
             <div class="modal-header">
-                <span class="modal-title">🤖 Quick Verification</span>
+                <span class="modal-title"> Quick Verification</span>
             </div>
             <div class="captcha-box">
                 <div class="captcha-question" id="captchaQuestion">5 + 3 = ?</div>
                 <input type="number" class="captcha-input" id="captchaInput" placeholder="Your answer"
                     onkeypress="handleCaptchaKey(event)">
-                <div class="captcha-error" id="captchaError">❌ Wrong answer! Try again.</div>
+                <div class="captcha-error" id="captchaError"> Wrong answer! Try again.</div>
             </div>
-            <button class="captcha-btn" onclick="verifyCaptcha()">✓ Verify & Start Chatting</button>
-            <div class="captcha-note">🛡️ This helps us prevent spam and protect the free service.</div>
-        </div>
-    </div>
-
-    <!-- Rename Modal -->
-    <div class="modal-overlay" id="renameModal">
-        <div class="modal">
-            <div class="modal-header">
-                <span class="modal-title">✏️ Rename Chat</span>
-                <button class="modal-close" onclick="closeRename()">✕</button>
-            </div>
-            <input type="text" class="rename-input" id="renameInput" placeholder="Enter new name..." maxlength="30">
-            <button class="rename-btn" onclick="saveRename()">Save</button>
+            <button class="captcha-btn" onclick="verifyCaptcha()"> Verify & Start Chatting</button>
+            <div class="captcha-note"> This helps us prevent spam and protect the free service.</div>
         </div>
     </div>
 
@@ -1194,32 +1005,19 @@
         const SESSIONS_KEY = 'ambuj_bot_sessions';
         const CURRENT_KEY = 'ambuj_bot_current';
         const CAPTCHA_KEY = 'ambuj_bot_verified';
-        let sessions = JSON.parse(localStorage.getItem(SESSIONS_KEY)) || [];
-        let currentSessionId = localStorage.getItem(CURRENT_KEY) || null;
+        let sessions = [];
+        let currentSessionId = null;
         let selectedImage = null;
         let captchaAnswer = 0;
-        let renameSessionId = null;
         let isHindiMode = false;
 
-        function toggleSidebar() {
-            document.querySelector('.sidebar').classList.toggle('active');
-        }
-
-        document.addEventListener('click', (e) => {
-            const sidebar = document.querySelector('.sidebar');
-            const menuBtn = document.querySelector('.menu-btn');
-            if (window.innerWidth <= 768 &&
-                sidebar && !sidebar.contains(e.target) &&
-                menuBtn && !menuBtn.contains(e.target) &&
-                sidebar.classList.contains('active')) {
-                sidebar.classList.remove('active');
-            }
-        });
-
         document.addEventListener('DOMContentLoaded', () => {
-            if (!sessions.length || !currentSessionId) createNewSession();
-            else loadSession(currentSessionId);
-            renderSessions();
+            // Clear old sessions on page refresh
+            localStorage.removeItem(SESSIONS_KEY);
+            localStorage.removeItem(CURRENT_KEY);
+            sessions = [];
+            currentSessionId = null;
+            createNewSession();
             checkCaptcha();
 
             // Load Hindi Mode preference
@@ -1229,16 +1027,14 @@
         });
 
         document.addEventListener('keydown', e => {
-            if (e.key === 'Escape') { closeSettings(); closeRename(); }
+            if (e.key === 'Escape') closeSettings();
         });
 
-        // Toggle Hindi Mode
         function toggleHindiMode() {
             isHindiMode = document.getElementById('hindiToggle').checked;
             localStorage.setItem('ambuj_bot_hindi_mode', isHindiMode);
         }
 
-        // CAPTCHA Functions
         function checkCaptcha() {
             const verified = localStorage.getItem(CAPTCHA_KEY);
             if (!verified) showCaptcha();
@@ -1258,7 +1054,6 @@
             if (input === captchaAnswer) {
                 localStorage.setItem(CAPTCHA_KEY, 'true');
                 document.getElementById('captchaModal').classList.remove('show');
-                document.getElementById('captchaError').style.display = 'none';
             } else {
                 document.getElementById('captchaError').style.display = 'block';
                 document.getElementById('captchaInput').value = '';
@@ -1268,98 +1063,22 @@
 
         function handleCaptchaKey(e) { if (e.key === 'Enter') verifyCaptcha(); }
 
-        // Settings Functions
         function openSettings() { document.getElementById('settingsModal').classList.add('show'); }
         function closeSettings() { document.getElementById('settingsModal').classList.remove('show'); }
         function updateTemp() { document.getElementById('tempValue').textContent = document.getElementById('tempSlider').value; }
         function updateMaxTokens() { document.getElementById('tokenValue').textContent = document.getElementById('tokenSlider').value; }
 
-        // Rename Functions
-        function openRename(id, e) {
-            e.stopPropagation();
-            renameSessionId = id;
-            const s = sessions.find(x => x.id === id);
-            document.getElementById('renameInput').value = s ? s.title : '';
-            document.getElementById('renameModal').classList.add('show');
-            document.getElementById('renameInput').focus();
-        }
-
-        function closeRename() {
-            document.getElementById('renameModal').classList.remove('show');
-            renameSessionId = null;
-        }
-
-        function saveRename() {
-            const newName = document.getElementById('renameInput').value.trim();
-            if (newName && renameSessionId) {
-                const s = sessions.find(x => x.id === renameSessionId);
-                if (s) {
-                    s.title = newName;
-                    saveSessions();
-                    renderSessions();
-                }
-            }
-            closeRename();
-        }
-
-        function deleteSession(id, e) {
-            e.stopPropagation();
-            if (confirm('Delete this chat?')) {
-                sessions = sessions.filter(x => x.id !== id);
-                saveSessions();
-                if (id === currentSessionId) {
-                    if (sessions.length) switchSession(sessions[0].id);
-                    else createNewSession();
-                } else {
-                    renderSessions();
-                }
-            }
-        }
-
-        // Session Functions
         function createNewSession() {
             const id = Date.now().toString();
             const newSession = {
                 id: id,
                 title: 'New Chat',
                 date: new Date().toLocaleDateString(),
-                messages: [{ role: 'bot', content: "👋 Namaste! I'm Ambuj's AI Assistant. Ask me anything about his projects, skills, or experience!" }]
+                messages: [{ role: 'bot', content: " Namaste! I'm Ambuj's AI Assistant. Ask me anything about his projects, skills, or experience!" }]
             };
             sessions.unshift(newSession);
-            saveSessions();
-            switchSession(id);
-        }
-
-        function switchSession(id) {
             currentSessionId = id;
-            localStorage.setItem(CURRENT_KEY, id);
-            renderSessions();
             renderMessages();
-        }
-
-        function saveSessions() {
-            localStorage.setItem(SESSIONS_KEY, JSON.stringify(sessions));
-        }
-
-        function loadSession(id) {
-            const session = sessions.find(s => s.id === id);
-            if (!session) {
-                createNewSession();
-            }
-        }
-
-        function renderSessions() {
-            const list = document.getElementById('sessionsList');
-            list.innerHTML = sessions.map(s => `
-                <div class="session-item ${s.id === currentSessionId ? 'active' : ''}" onclick="switchSession('${s.id}')">
-                    <div class="session-title">${s.title}</div>
-                    <div class="session-date">${s.date}</div>
-                    <div class="session-actions">
-                        <button class="action-btn" onclick="openRename('${s.id}', event)" title="Rename">✏️</button>
-                        <button class="action-btn delete-btn" onclick="deleteSession('${s.id}', event)" title="Delete">🗑️</button>
-                    </div>
-                </div>
-            `).join('');
         }
 
         function renderMessages() {
@@ -1369,102 +1088,86 @@
 
             container.innerHTML = session.messages.map(msg => `
                 <div class="message ${msg.role}">
-                    <div class="avatar">${msg.role === 'user' ? '👤' : '🤖'}</div>
+                    <div class="avatar">${msg.role === 'user' ? '👤' : '<img src="logo.jpg" alt="Bot">'}</div>
                     <div class="content">${marked.parse(msg.content)}</div>
                 </div>
             `).join('');
             container.scrollTop = container.scrollHeight;
         }
 
-        // Chat Functions
-        function handleKey(e) {
-            if (e.key === 'Enter') sendMessage();
-        }
-
-        function sendQuick(text) {
-            document.getElementById('msgInput').value = text;
-            sendMessage();
-        }
+        function handleKey(e) { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMessage(); } }
+        function sendQuick(text) { document.getElementById('msgInput').value = text; sendMessage(); }
 
         function handleUpload(e) {
             const file = e.target.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function (e) {
-                    selectedImage = e.target.result;
-                    document.getElementById('previewImg').src = selectedImage;
-                    document.getElementById('previewName').textContent = file.name;
-                    document.getElementById('previewSize').textContent = (file.size / 1024).toFixed(1) + ' KB';
-                    document.getElementById('imgPreview').style.display = 'flex';
-                };
-                reader.readAsDataURL(file);
-            }
+            if (!file) return;
+            selectedImage = file;
+            document.getElementById('previewImg').src = URL.createObjectURL(file);
+            document.getElementById('previewName').textContent = file.name;
+            document.getElementById('previewSize').textContent = (file.size / 1024).toFixed(1) + ' KB';
+            document.getElementById('imgPreview').style.display = 'flex';
         }
 
         function removeImage() {
             selectedImage = null;
             document.getElementById('imgPreview').style.display = 'none';
-            document.querySelector('input[type="file"]').value = '';
         }
 
-        async function sendMessage(text = null) {
+        async function sendMessage() {
             const input = document.getElementById('msgInput');
-            const message = text || input.value.trim();
-
+            const message = input.value.trim();
             if (!message && !selectedImage) return;
 
-            // Add User Message
             const session = sessions.find(s => s.id === currentSessionId);
-            session.messages.push({ role: 'user', content: message });
+            if (!session) return;
 
-            // Update session title if it's the first user message
-            if (session.messages.filter(m => m.role === 'user').length === 1) {
+            const userContent = selectedImage ? `[Image: ${selectedImage.name}] ${message || 'Analyze this image'}` : message;
+            session.messages.push({ role: 'user', content: userContent });
+
+            if (session.messages.length === 2) {
                 session.title = message.substring(0, 30) + (message.length > 30 ? '...' : '');
             }
 
-            saveSessions();
-            renderSessions();
             renderMessages();
-
             input.value = '';
 
-            // Show Loading
             const loadingId = 'loading-' + Date.now();
             document.getElementById('messagesContainer').insertAdjacentHTML('beforeend', `
                 <div class="message bot" id="${loadingId}">
-                    <div class="avatar">🤖</div>
+                    <div class="avatar"><img src="logo.jpg" alt="Bot"></div>
                     <div class="content"><div class="typing-indicator"><span></span><span></span><span></span></div></div>
                 </div>
             `);
             document.getElementById('messagesContainer').scrollTop = document.getElementById('messagesContainer').scrollHeight;
 
             try {
-                const response = await fetch('/api/messages', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        text: message,
-                        image: selectedImage,
-                        forceHindi: isHindiMode // Send Hindi Mode flag
-                    })
-                });
+                let response;
+                if (selectedImage) {
+                    const formData = new FormData();
+                    formData.append('image', selectedImage);
+                    formData.append('prompt', message || 'Analyze this image in detail');
+                    formData.append('forceHindi', isHindiMode);
+                    response = await fetch('/api/analyze-image', { method: 'POST', body: formData });
+                    removeImage();
+                } else {
+                    const history = session.messages.slice(0, -1).map(m => ({ role: m.role, content: m.content }));
+                    response = await fetch('/api/messages', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ text: message, conversation: { id: currentSessionId }, forceHindi: isHindiMode })
+                    });
+                }
 
                 const data = await response.json();
+                document.getElementById(loadingId)?.remove();
 
-                // Remove Loading
-                document.getElementById(loadingId).remove();
-
-                // Add Bot Response
-                session.messages.push({ role: 'bot', content: data.text });
-                saveSessions();
+                const botReply = data.text || data.reply || data.message || "Sorry, I couldn't process that.";
+                session.messages.push({ role: 'bot', content: botReply });
                 renderMessages();
 
-                if (selectedImage) removeImage();
-
             } catch (error) {
-                document.getElementById(loadingId).remove();
-                session.messages.push({ role: 'bot', content: "⚠️ Connection Error. Please try again." });
-                saveSessions();
+                document.getElementById(loadingId)?.remove();
+                session.messages.push({ role: 'bot', content: " Oops! Something went wrong. Please try again." });
                 renderMessages();
             }
         }
