@@ -631,8 +631,54 @@
 
         /* Mobile Responsive - Optimized for Widget Embedding */
         @media (max-width: 768px) {
+
+            /* Compact floating branding for mobile */
             .floating-branding {
-                display: none;
+                display: block;
+                bottom: 10px;
+                left: 10px;
+                right: 10px;
+                width: auto;
+                max-width: none;
+                padding: 10px 14px;
+                border-radius: 12px;
+            }
+
+            .floating-branding .branding-header {
+                gap: 10px;
+                margin-bottom: 8px;
+            }
+
+            .floating-branding .branding-logo {
+                width: 35px;
+                height: 35px;
+            }
+
+            .floating-branding .branding-name {
+                font-size: 13px;
+            }
+
+            .floating-branding .branding-subtitle {
+                font-size: 9px;
+            }
+
+            .floating-branding .branding-info {
+                font-size: 10px;
+                margin-bottom: 6px;
+            }
+
+            .floating-branding .tech-badges {
+                gap: 4px;
+                margin-bottom: 6px;
+            }
+
+            .floating-branding .tech-badge {
+                font-size: 8px;
+                padding: 3px 6px;
+            }
+
+            .floating-branding .lang-info {
+                font-size: 9px;
             }
 
             .header {
