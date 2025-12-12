@@ -132,11 +132,11 @@
 
         .message {
             display: flex;
-            gap: 15px;
-            max-width: 800px;
-            margin: 0 auto;
+            gap: 10px;
+            max-width: 100%;
             width: 100%;
             animation: fadeIn 0.3s ease;
+            overflow: hidden;
         }
 
         @keyframes fadeIn {
@@ -181,15 +181,18 @@
 
         .content {
             background: var(--bg-card);
-            padding: 15px 18px;
+            padding: 12px 14px;
             border-radius: 12px;
             border: 1px solid var(--border-color);
-            line-height: 1.7;
-            font-size: 15px;
+            line-height: 1.6;
+            font-size: 14px;
             position: relative;
             word-wrap: break-word;
             overflow-wrap: break-word;
-            max-width: calc(100% - 55px);
+            word-break: break-word;
+            flex: 1;
+            min-width: 0;
+            overflow: hidden;
         }
 
         .message.user .content {
@@ -293,21 +296,19 @@
         /* Quick Actions - Scrollable */
         .quick-actions {
             display: flex;
-            gap: 10px;
-            padding: 10px 15px;
-            overflow-x: auto;
-            flex-wrap: nowrap;
+            gap: 8px;
+            padding: 10px 12px;
+            overflow-x: scroll !important;
+            overflow-y: hidden;
+            flex-wrap: nowrap !important;
             -webkit-overflow-scrolling: touch;
-            scrollbar-width: thin;
+            scrollbar-width: none;
+            width: 100%;
+            box-sizing: border-box;
         }
 
         .quick-actions::-webkit-scrollbar {
-            height: 4px;
-        }
-
-        .quick-actions::-webkit-scrollbar-thumb {
-            background: var(--border-color);
-            border-radius: 2px;
+            display: none;
         }
 
         .chip {
