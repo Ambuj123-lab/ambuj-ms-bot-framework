@@ -186,6 +186,9 @@
             line-height: 1.7;
             font-size: 15px;
             position: relative;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            max-width: calc(100% - 55px);
         }
 
         .message.user .content {
@@ -551,19 +554,9 @@
             transform: translateX(22px);
         }
 
-        /* Floating Branding Box */
+        /* Floating Branding Box - Hidden (branding now in header) */
         .floating-branding {
-            position: fixed;
-            bottom: 25px;
-            left: 25px;
-            background: linear-gradient(135deg, rgba(242, 80, 34, 0.15), rgba(26, 26, 26, 0.95));
-            border: 1px solid rgba(242, 80, 34, 0.4);
-            border-radius: 16px;
-            padding: 18px 22px;
-            z-index: 1000;
-            backdrop-filter: blur(15px);
-            width: 280px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+            display: none;
         }
 
         .floating-branding .branding-header {
@@ -986,17 +979,17 @@
 
     <div class="container">
         <div class="app">
-            <div class="header">
+            <div class="header"
+                style="background: linear-gradient(135deg, rgba(242, 80, 34, 0.15), rgba(26, 26, 26, 0.95)); border-bottom: 1px solid rgba(242, 80, 34, 0.3);">
                 <div class="header-left">
-                    <img src="logo.jpg" alt="Ambuj" class="logo-img">
+                    <img src="logo.jpg" alt="Ambuj" class="logo-img" style="border: 2px solid var(--primary);">
                     <div class="header-info">
-                        <h1>Ambuj's AI</h1>
-                        <p><span class="status-dot"></span> Online Guardrails Active</p>
+                        <h1 style="color: var(--primary);">Ambuj's AI Bot</h1>
+                        <p><span class="status-dot"></span> Online • Guardrails Active</p>
                     </div>
                 </div>
                 <div class="header-actions" style="display: flex; align-items: center; gap: 8px;">
-                    <span style="font-size:11px;color:var(--text-muted);">Settings</span>
-                    <button class="icon-btn" onclick="openSettings()" title="Settings">&#9881;</button>
+                    <button class="icon-btn" onclick="openSettings()" title="Settings">⚙</button>
                 </div>
             </div>
 
