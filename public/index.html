@@ -123,6 +123,7 @@
             flex: 1;
             padding: 20px;
             overflow-y: auto;
+            overflow-x: hidden;
             display: flex;
             flex-direction: column;
             gap: 20px;
@@ -289,13 +290,24 @@
             font-style: italic;
         }
 
-        /* Quick Actions */
+        /* Quick Actions - Scrollable */
         .quick-actions {
             display: flex;
             gap: 10px;
-            padding: 0 20px 15px;
-            justify-content: center;
-            flex-wrap: wrap;
+            padding: 10px 15px;
+            overflow-x: auto;
+            flex-wrap: nowrap;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: thin;
+        }
+
+        .quick-actions::-webkit-scrollbar {
+            height: 4px;
+        }
+
+        .quick-actions::-webkit-scrollbar-thumb {
+            background: var(--border-color);
+            border-radius: 2px;
         }
 
         .chip {
@@ -307,6 +319,8 @@
             cursor: pointer;
             transition: all 0.2s;
             color: var(--text-secondary);
+            flex-shrink: 0;
+            white-space: nowrap;
         }
 
         .chip:hover {
@@ -921,39 +935,34 @@
 </head>
 
 <body>
-    <!-- Floating Branding Box -->
-    <div class="floating-branding">
-        <div class="branding-header">
-            <div class="branding-logo"><img src="logo.jpg" alt="Ambuj"></div>
-            <div>
-                <div class="branding-name">Ambuj's AI Bot</div>
-                <div class="branding-subtitle">v1.0 Guardrails Active</div>
-            </div>
-        </div>
-        <div class="branding-info">Built by <a href="https://ambuj-portfolio-v2.netlify.app/" target="_blank">Ambuj
-                Kumar Tripathi</a></div>
-        <div class="tech-badges">
-            <span class="tech-badge">MS Bot Framework</span>
-            <span class="tech-badge">Amazon Nova</span>
-            <span class="tech-badge">Node.js</span>
-        </div>
-        <div class="lang-info"> Hindi English Hinglish</div>
-    </div>
-
     <div class="container">
         <div class="app">
+            <!-- Branding Header - Orange Box Style -->
             <div class="header"
-                style="background: linear-gradient(135deg, rgba(242, 80, 34, 0.15), rgba(26, 26, 26, 0.95)); border-bottom: 1px solid rgba(242, 80, 34, 0.3);">
-                <div class="header-left">
-                    <img src="logo.jpg" alt="Ambuj" class="logo-img" style="border: 2px solid var(--primary);">
-                    <div class="header-info">
-                        <h1 style="color: var(--primary);">Ambuj's AI Bot</h1>
-                        <p><span class="status-dot"></span> Online • Guardrails Active</p>
+                style="background: linear-gradient(135deg, rgba(242, 80, 34, 0.2), rgba(26, 26, 26, 0.95)); border: 1px solid rgba(242, 80, 34, 0.4); border-radius: 12px; margin: 10px; padding: 15px; flex-direction: column; align-items: flex-start;">
+                <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 10px;">
+                    <img src="logo.jpg" alt="Ambuj" class="logo-img"
+                        style="width: 45px; height: 45px; border: 2px solid var(--primary); border-radius: 10px;">
+                    <div>
+                        <h1 style="color: var(--primary); font-size: 16px; margin: 0;">Ambuj's AI Bot</h1>
+                        <p style="font-size: 11px; color: var(--success); margin: 0;"><span class="status-dot"></span>
+                            Online • Guardrails Active</p>
                     </div>
                 </div>
-                <div class="header-actions" style="display: flex; align-items: center; gap: 8px;">
-                    <button class="icon-btn" onclick="openSettings()" title="Settings">⚙</button>
+                <div style="font-size: 11px; color: var(--text-secondary); margin-bottom: 8px;">Built by <a
+                        href="https://ambuj-portfolio-v2.netlify.app/" target="_blank"
+                        style="color: var(--primary); text-decoration: none;">Ambuj Kumar Tripathi</a></div>
+                <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 6px;">
+                    <span
+                        style="font-size: 10px; padding: 4px 8px; background: rgba(255,255,255,0.1); border-radius: 6px; color: var(--text-secondary);">MS
+                        Bot Framework</span>
+                    <span
+                        style="font-size: 10px; padding: 4px 8px; background: rgba(255,255,255,0.1); border-radius: 6px; color: var(--text-secondary);">Amazon
+                        Nova</span>
+                    <span
+                        style="font-size: 10px; padding: 4px 8px; background: rgba(255,255,255,0.1); border-radius: 6px; color: var(--text-secondary);">Node.js</span>
                 </div>
+                <div style="font-size: 10px; color: var(--text-muted);">🌐 Hindi • English • Hinglish</div>
             </div>
 
             <div class="messages" id="messagesContainer"></div>
@@ -1022,7 +1031,8 @@
             </div>
             <div class="setting-group">
                 <div class="setting-label"><span>Max Tokens</span><span class="setting-value"
-                        id="tokenValue">2000</span></div>
+                        id="tokenValue">2000</span>
+                </div>
                 <input type="range" class="slider" id="tokenSlider" min="500" max="4000" step="500" value="2000"
                     oninput="updateMaxTokens()">
                 <div class="setting-note">Response length (Backend: 2000)</div>
