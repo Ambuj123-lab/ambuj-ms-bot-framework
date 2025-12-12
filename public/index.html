@@ -29,22 +29,23 @@
             font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
         }
 
-        html {
-            height: 100%;
-        }
-
+        html,
         body {
+            height: 100vh;
+            /* Revert to viewport height */
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            /* Prevent body scroll */
             background-color: var(--bg-dark);
             color: var(--text-primary);
-            height: 100%;
-            margin: 0;
-            overflow: hidden;
         }
 
         .container {
             display: flex;
             width: 100%;
             height: 100%;
+            overflow: hidden;
         }
 
         /* Main App */
@@ -724,11 +725,22 @@
                 font-size: 12px;
             }
 
-            /* INPUT AREA - Must be visible and functional */
+            /* Fix Mobile Layout Structure */
+            .app {
+                height: 100vh;
+                display: flex;
+                flex-direction: column;
+                overflow: hidden;
+            }
+
+            /* INPUT AREA - Fixed at bottom if needed, but flex should handle it */
             .input-area {
-                padding: 12px;
+                padding: 10px;
                 background: var(--bg-dark);
                 border-top: 1px solid var(--border-color);
+                flex-shrink: 0;
+                /* Prevent shrinking */
+                z-index: 100;
             }
 
             .input-container {
